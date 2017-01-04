@@ -1,0 +1,15 @@
+[Unit]
+Description=aws-es-auth-proxy
+
+[Service]
+ExecStart=/usr/bin/aws-es-auth-proxy --aws_service_region= --aws_service_endpoint= --proxy_port= --proxy_host=
+User=
+Environment=AWS_ACCESS_KEY_ID= AWS_SECRET_ACCESS_KEY=
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=aws-es-auth-proxy
+
+[Install]
+WantedBy=multi-user.target
